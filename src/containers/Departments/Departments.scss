@@ -1,0 +1,28 @@
+.departments {
+  .refreshBtn {
+    margin-left: 20px;
+  }
+  .idCol {
+    width: 5%;
+  }
+  .nameCol {
+    width: 20%;
+  }
+  .inactiveCol {
+    width: 30%;
+  }
+  .buttonCol {
+    width: 25%;
+    :global(.btn) {
+      margin: 0 5px;
+    }
+  }
+  tr.saving {
+    opacity: 0.8;
+    :global(.btn) {
+      &[disabled] {
+        opacity: 1;
+      }
+    }
+  }
+}

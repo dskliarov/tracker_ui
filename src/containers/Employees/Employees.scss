@@ -1,0 +1,38 @@
+.employees {
+  .refreshBtn {
+    margin-left: 20px;
+  }
+  .idCol {
+    width: 5%;
+  }
+  .firstNameCol {
+    width: 20%;
+  }
+  .lastNameCol {
+    width: 20%;
+    input {
+      text-align: right;
+    }
+  }
+  .inactiveCol {
+    width: 20%;
+    text-align: center;
+  }
+  .departmentCol {
+    width: 30%;
+  }
+  .buttonCol {
+    width: 25%;
+    :global(.btn) {
+      margin: 0 5px;
+    }
+  }
+  tr.saving {
+    opacity: 0.8;
+    :global(.btn) {
+      &[disabled] {
+        opacity: 1;
+      }
+    }
+  }
+}
