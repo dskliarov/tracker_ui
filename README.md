@@ -13,7 +13,7 @@
 
 This is a starter boilerplate app I've put together using the following technologies:
 
-* ~~Isomorphic~~ [Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) rendering
+* [Universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9) rendering
 * Both client and server make calls to load data from separate API server
 * [React](https://github.com/facebook/react)
 * [React Router](https://github.com/rackt/react-router)
@@ -257,4 +257,3 @@ If you would like to submit a pull request, please make an effort to follow the 
 Thanks for checking this out.
 
 – Erik Rasmussen, [@erikras](https://twitter.com/erikras)
-- Igor Test
