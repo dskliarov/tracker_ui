@@ -1,4 +1,4 @@
-# Contributing Guidelines - DO NOT EVEN TRY
+# Contributing Guidelines
 
 Some basic conventions for contributing to this project.
 
