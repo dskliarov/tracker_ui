@@ -1,4 +1,4 @@
-# React Redux Universal Hot Example 1
+# React Redux Universal Hot Example 2 - 11:25
 
 [![build status](https://img.shields.io/travis/erikras/react-redux-universal-hot-example/master.svg?style=flat-square)](https://travis-ci.org/erikras/react-redux-universal-hot-example)
 [![Dependency Status](https://david-dm.org/erikras/react-redux-universal-hot-example.svg?style=flat-square)](https://david-dm.org/erikras/react-redux-universal-hot-example)
