@@ -93,17 +93,20 @@ export function load() {
   };
 }
 
-export function save(widget) {
+export function save(department) {
+  const toSave = {'department': department};
+  console.log(toSave);
   return {
     types: [SAVE, SAVE_SUCCESS, SAVE_FAIL],
-    id: widget.id,
-    promise: (client) => client.post('/api/departments/update', {
-      data: widget
+    id: department.id,
+    promise: (client) => client.post('/api/departments', {
+      data: toSave
     })
   };
 }
 
 export function editStart(id) {
+  console.log('from editStart! id = ' + id);
   return { type: EDIT_START, id };
 }
 

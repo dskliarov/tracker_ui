@@ -36,6 +36,8 @@ export default class Widgets extends Component {
   render() {
     const handleEdit = (widget) => {
       const {editStart} = this.props; // eslint-disable-line no-shadow
+      console.log('widget : ' + widget);
+      console.log('editStart: ' + editStart);
       return () => editStart(String(widget.id));
     };
     const {widgets, error, editing, loading, load} = this.props;

@@ -1,11 +1,11 @@
 import React, {Component, PropTypes} from 'react';
 import Helmet from 'react-helmet';
 import {connect} from 'react-redux';
-import * as departmentsActions from 'redux/modules/departments';
+import * as departmentActions from 'redux/modules/departments';
 import {isLoaded, load as loadDepartments} from 'redux/modules/departments';
 import {initializeWithKey} from 'redux-form';
 import connectData from 'helpers/connectData';
-import { WidgetForm } from 'components';
+import { DepartmentForm } from 'components';
 
 function fetchDataDeferred(getState, dispatch) {
   if (!isLoaded(getState())) {
@@ -21,8 +21,10 @@ function fetchDataDeferred(getState, dispatch) {
     error: state.departments.error,
     loading: state.departments.loading
   }),
-  {...departmentsActions, initializeWithKey })
+  {...departmentActions, initializeWithKey })
+
 export default class Departments extends Component {
+
   static propTypes = {
     departments: PropTypes.array,
     error: PropTypes.string,
@@ -53,13 +55,22 @@ export default class Departments extends Component {
           </button>
         </h1>
         <Helmet title="Departments"/>
+        <p>
+          If you hit refresh on your browser, the data loading will take place on the server before the page is returned.
+          If you navigated here from another page, the data was fetched from the client after the route transition.
+          This uses the static method <code>fetchDataDeferred</code>. To block a route transition until some data is loaded, use <code>fetchData</code>.
+          To always render before loading data, even on the server, use <code>componentDidMount</code>.
+        </p>
+        <p>
+          This widgets are stored in your session, so feel free to edit it and refresh.
+        </p>
         {error &&
         <div className="alert alert-danger" role="alert">
           <span className="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
           {' '}
           {error}
         </div>}
-        {departments && departments.length &&
+       {departments && departments.length &&
         <table className="table table-striped">
           <thead>
           <tr>
@@ -72,8 +83,8 @@ export default class Departments extends Component {
           <tbody>
           {
             departments.map((department) => editing[department.id] ?
-              <WidgetForm formKey={String(department.id)} key={String(department.id)} initialValues={department}/> :
-              <tr key={department.id}>
+              <DepartmentForm formKey={String(department.id)} key={String(department.id)} initialValues={department}/> :
+                <tr key={department.id}>
                 <td className={styles.idCol}>{department.id}</td>
                 <td className={styles.nameCol}>{department.name}</td>
                 <td className={styles.inactiveCol}>{department.inactive.toString()}</td>
